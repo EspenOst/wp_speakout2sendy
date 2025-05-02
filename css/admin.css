@@ -1,0 +1,187 @@
+/* custom plugin icon for h2 headers */
+#no-speakout2sendy #icon-no-speakout2sendy { background: transparent url(../images/icon-emailpetitions-32.png) no-repeat top left; }
+
+/* Settings & addnew tabs
+------------------------------------------------------------------- */
+ul#no-speakout2sendy-tabbar,  ul#dk-petition-tabbar{
+	border-bottom: 1px solid #aaa;
+	margin: 2em 0;
+	padding-left: 1em;
+}
+ul#no-speakout2sendy-tabbar li, ul#dk-petition-tabbar li  {
+	display: inline-block;
+	margin: 0 0 -1px 0;
+}
+ul#no-speakout2sendy-tabbar li a, ul#dk-petition-tabbar li a {
+	display: inline-block;
+	background: #dcdcdc url(../images/bg-tabs-off.png) repeat-x top left;
+	border-top-right-radius: 6px;
+	border-top-left-radius: 6px;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #aaa;
+	border-right: 1px solid #ccc;
+	border-collapse: collapse;
+	font-weight: bold;
+	padding: 2px 15px 0 15px;
+	line-height: 30px;
+	font-weight: bold;
+	text-shadow: 0px 1px 0 #fff;
+	color: #666;
+	cursor: pointer;
+}
+ul#no-speakout2sendy-tabbar li a:hover, ul#dk-petition-tabbar li a:hover { color: #21759b; }
+ul#no-speakout2sendy-tabbar li a.no-speakout2sendy-active, ul#dk-petition-tabbar li a.dk-petition-active {
+	background: #fff;
+	border-top: 1px solid #aaa;
+	border-left: 1px solid #aaa;
+	border-bottom: 1px solid #fff;
+	border-right: 1px solid #aaa;
+	color: #333;
+	padding: 4px 15px 0 15px;
+	font-weight: bold;
+}
+
+/* Form styles for Add New page
+------------------------------------------------------------------- */
+label {
+    cursor: default !important;
+}
+#no-speakout2sendy label {
+	display: block;
+	font-weight: bold;
+    
+}
+#no-speakout2sendy label#title-prompt-text { font-weight: normal; }
+#no-speakout2sendy #post-body .postbox label { margin: .5em 6px .25em 0; }
+#no-speakout2sendy form#no-speakout2sendy-edit-petition textarea { width: 99%; }
+#no-speakout2sendy form#no-speakout2sendy-settings textarea { width: 85%; }
+#no-speakout2sendy .no-speakout2sendy-inline { display: inline; }
+#no-speakout2sendy input[type=text] { margin: 0 0 .5em 0; }
+#no-speakout2sendy .no-speakout2sendy-hidden { display: none; }
+#no-speakout2sendy .no-speakout2sendy-right { text-align: right; }
+#no-speakout2sendy .no-speakout2sendy-subsection { margin-top: .5em;}
+#no-speakout2sendy .no-speakout2sendy-subsection label {
+	font-weight: normal;
+	display: inline;
+}
+#no-speakout2sendy .no-speakout2sendy-subsection #day, #no-speakout2sendy .no-speakout2sendy-subsection #hour, #no-speakout2sendy .no-speakout2sendy-subsection #minutes{
+    width:30px;
+}
+#no-speakout2sendy .no-speakout2sendy-subsection #year{
+    width:50px;
+}
+#no-speakout2sendy .form-table label { font-weight: normal; }
+#no-speakout2sendy .sends_email {
+    margin: 10px -6px 0 0;
+}
+body.admin-color-classic .sends_email { background-color: transparent !important; }
+.no-speakout2sendy-petition-content { padding-top: 5px; }
+#no-speakout2sendy #twitter-counter {
+	font-size: 1.1em;
+	text-align: right;
+	padding: 3px 7px 0 0;
+}
+.no-speakout2sendy-address input { margin-left: 1.5em !important; }
+.no-speakout2sendy-checkbox label { vertical-align: text-top; }
+
+/* error messages for Add / Edit form */
+.no-speakout2sendy-error-msg { display: none; }
+.no-speakout2sendy-error {
+	border: 1px solid #c00 !important;
+	background-color: #ffebe8 !important;
+}
+#no-speakout2sendy #target_email, #target_email_CC, #no-speakout2sendy #email_subject, #no-speakout2sendy #greeting { width: 60%; }
+
+/* alterations to some default WP styles */
+#no-speakout2sendy .postbox { padding:15px; }
+#no-speakout2sendy .postbox h3 { cursor: auto; }
+#no-speakout2sendy .misc-pub-section { font-size: 11px; }
+#no-speakout2sendy #major-publishing-actions { border-top: 1px solid #ddd; }
+
+#no-speakout2sendy input#goal { text-align: right; }
+
+#no-speakout2sendy .signature-table-label {
+	color: #000;
+	font-size:13px;
+}
+#no-speakout2sendy .table-label {
+	color: #000;
+	font-weight: bold;
+}
+#no-speakout2sendy .table-label span.count {
+	color: #999;
+	font-weight: normal;
+}
+
+#no-speakout2sendy #side-sortables .inside { padding: 0; margin: 5px 0 0 0;}
+
+
+.no_speakout2sendy_clear { clear: both; }
+.no-speakout2sendy-inline { display: inline; }
+.no-speakout2sendy-red { color: #900; }
+.no-speakout2sendy-green { color: #090; }
+
+form#no-speakout2sendy-settings h3 { margin: 2em 0 0 0; }
+.no-speakout2sendy-tablerow:hover { background-color: #ffd; }
+.no-speakout2sendy-tablerow-even { background: #fff; }
+body.admin-color-classic .no-speakout2sendy-tablerow-even { background: #f7fcfe; }
+
+.normalText{
+    font-weight:normal;
+    color:#000;
+}
+#no-speakout2sendy-recaptcha-keys{
+    margin-top:10px;
+}
+
+/*---- additional style for signatures page --- */
+.no-sigform{
+    display:inline;
+    position: relative;
+    bottom: 8px;
+}
+#no_sig_search_form{
+    left:50px;
+    position: relative;
+    bottom: 3px;
+}
+#search-button {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 8px;
+    right: 10px;
+    background: none;
+    border: none;
+}
+#search-button svg {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+#no-speakout2sendy-doaction{
+    margin: 8px 8px 0 0;
+}
+/* ----- additional styles for settings page ----- */
+
+.recaptcha-key{
+    width:400px;
+}
+.warningIcon{
+    text-decoration: none;
+    color: red;
+    font-size: 14px;
+    top: 3px;
+    position: relative;
+}
+
+.no-speakout2sendy-hide-email-option{
+    display:none;
+}
+.insert_tags{
+    margin: 3px 0 3px 0;
+}
+.margin-20-left{
+    margin-left:15px;
+}
