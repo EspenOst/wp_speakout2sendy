@@ -3,8 +3,7 @@
 // plugin installation routine
 
 function no_speakout2sendy_install() {
-
-global $wpdb, $db_petitions, $db_syncjobs, $db_sendylists, $no_speakout2sendy_version;
+	global $wpdb, $db_petitions, $db_syncjobs, $db_sendylists, $no_speakout2sendy_version;
 
 	$sql_create_tables = "
 		CREATE TABLE `$db_syncjobs` (
@@ -20,6 +19,7 @@ global $wpdb, $db_petitions, $db_syncjobs, $db_sendylists, $no_speakout2sendy_ve
 
 		CREATE TABLE `$db_sendylists` (
 			`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+			`sendyurl` VARCHAR(200) CHARACTER SET utf8 NOT NULL,
 			`apikey` VARCHAR(200) CHARACTER SET utf8 NOT NULL,
 			`name` VARCHAR(200) CHARACTER SET utf8 NOT NULL,
 			`list` VARCHAR(200) CHARACTER SET utf8 NOT NULL,
@@ -54,7 +54,28 @@ function no_speakout2sendy_update() {
     ///////////////////////////////////////////////
     //   update previous installs
     ////////////////////////////////////////////////
-    
+    if( $installed_version != $no_speakout2sendy_version ) {
+		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+
+		debug_to_console("Test: " + $installed_version);
+
+		switch( $installed_version ) {
+			case '1.0.0.0':
+				// update the version number in the options table
+				update_option( 'no_speakout2sendy_version', $no_speakout2sendy_version );
+				// update the database tables
+				$sql_update_tables = "
+				ALTER TABLE `$db_sendylists` 
+					ADD `sendyurl` VARCHAR(200)
+				;";
+						// update database tables
+				dbDelta( $$sql_update_tables );
+
+			case '1.0.0.1':
+				// update the version number in the options table
+				update_option( 'no_speakout2sendy_version', '1.0.0.0' );
+		}
+	}
 }
 
 ?>

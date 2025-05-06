@@ -21,6 +21,9 @@
 						<label for="name">Name <span class='normalText'>'Internal name to rember the Sendy list by</span></label> 
 						<input name="name" id="name" value="<?php echo esc_attr( $sendylist->name ); ?>" size="40" maxlength="300" type="text" />
 
+						<label for="sendyurl">Sendy server domain name <span class='normalText'>domain for the sendy server</span></label> 
+						<input name="sendyurl" id="sendyurl" value="<?php echo esc_attr( $sendylist->sendyurl ); ?>" size="40" maxlength="300" type="text" />
+
 						<label for="apikey">Api key <span class='normalText'>apikey for the sendy account</span></label> 
 						<input name="apikey" id="apikey" value="<?php echo esc_attr( $sendylist->apikey ); ?>" size="40" maxlength="300" type="text" />
 						

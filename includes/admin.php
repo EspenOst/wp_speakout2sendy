@@ -110,4 +110,12 @@ function no_speakout2sendy_admin_css() {
 		wp_enqueue_style( 'no_speakout2sendy_admin_css', plugins_url( 'speakout2sendy/css/admin.css' ) ,"", $no_speakout2sendy_version );
 	}
 }
+
+function debug_to_console($data) {
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
+
+    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+}
 ?>

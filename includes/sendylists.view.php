@@ -15,20 +15,13 @@
 			<tr>
 				<th>ID</th>
 				<th>Name</th>
+				<th>SendyDomain</th>
 				<th>ApiKey</th>
 				<th>List</th>
 			</tr>
 		</thead>
-		<tfoot>
-			<tr>
-				<th>ID</th>
-				<th>Name</th>
-				<th>ApiKey</th>
-				<th>List</th>
-			</tr>
-		</tfoot>
 		<tbody>
-		<?php if ( $count == 0 ) echo '<tr><td colspan="4"> No Sendylists found.</td></tr>'; ?>
+		<?php if ( $count == 0 ) echo '<tr><td colspan="5"> No Sendylists found.</td></tr>'; ?>
 		<?php foreach ( $sendylists as $sendylist ) : ?>
 			<?php $edit_url       = esc_url( wp_nonce_url( site_url() . '/wp-admin/admin.php?page=no_speakout2sendy_addnewsendylist&action=edit&id=' . $sendylist->id, 'no_speakout2sendy-edit_sendylist' . $sendylist->id ) ); ?>
 			<?php $delete_url     = esc_url( wp_nonce_url( site_url() . '/wp-admin/admin.php?page=no_speakout2sendy_sendylists&action=delete&id=' . $sendylist->id, 'no_speakout2sendy-delete_sendylist' . $sendylist->id ) ); ?>
@@ -43,11 +36,21 @@
 						<span><a href="<?php echo $delete_url; ?>" class="no-speakout2sendy-delete-petition">Delete</a></span>
 					</div>
 				</td>
+				<td><?php echo $sendylist->sendyurl ?></td>
 				<td><?php echo $sendylist->apikey ?></td>
 				<td><?php echo $sendylist->list ?></td>
 			</tr>
 		<?php endforeach; ?>
 		</tbody>
+		<tfoot>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>SendyDomain</th>
+				<th>ApiKey</th>
+				<th>List</th>
+			</tr>
+		</tfoot>
 	</table>
 	<div id="no-speakout2sendy-delete-confirmation" class="no-speakout2sendy-hidden">Delete this sendylist permanently?</div>
 

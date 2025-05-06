@@ -3,7 +3,7 @@
 Plugin Name: SpeakOut!2Sendy
 Plugin URI: N/A
 Description: Plugin to sync email adresses from SpeakOut petitions to Sendy newsletter system.
-Version: 1.0
+Version: 1.0.0.1
 Author: Espen Østrem
 License: GPLv2 or later
 Text Domain: no_speakout2sendy
@@ -14,7 +14,7 @@ $db_petitions  = $wpdb->prefix . 'dk_speakout_petitions';
 $db_signatures = $wpdb->prefix . 'dk_speakout_signatures';
 $db_syncjobs   = $wpdb->prefix . 'no_speakout2sendy_syncjobs';
 $db_sendylists = $wpdb->prefix . 'no_speakout2sendy_sendylists';
-$no_speakout2sendy_version = '1.0.0.0';
+$no_speakout2sendy_version = '1.0.0.1';
 
 // load admin functions only on admin pages
 if (is_admin()) {

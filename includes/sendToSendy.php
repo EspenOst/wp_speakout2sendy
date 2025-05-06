@@ -5,7 +5,7 @@ class no_speakout2sendy_sendToSendy
 
 	function send($sendylist, $signature) {
 
-		$baseUrl = 'https://sendy.dyrsfrihet.no/subscribe';
+		$baseUrl = 'https://' . $sendylist->sendyurl . '/subscribe';
 
 		$body = array(
 			'name'    => sanitize_text_field( $signature->first_name . ' ' .  $signature->last_name ),

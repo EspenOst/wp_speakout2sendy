@@ -7,6 +7,7 @@ class no_speakout2sendy_sendylist
 {
 	public $id; 
 	public $name;
+	public $sendyurl;
 	public $apikey;
 	public $list;
 	public $created_date;
@@ -22,7 +23,12 @@ class no_speakout2sendy_sendylist
 
 		// query sendylists 
 		$sql = "
-			SELECT $db_sendylists.id, $db_sendylists.name, $db_sendylists.apikey, $db_sendylists.list, $db_sendylists.created_date
+			SELECT $db_sendylists.id, 
+				$db_sendylists.name, 
+				$db_sendylists.sendyurl, 
+				$db_sendylists.apikey, 
+				$db_sendylists.list, 
+				$db_sendylists.created_date
 			FROM $db_sendylists
 			ORDER BY `id` DESC
 		";
@@ -58,12 +64,13 @@ class no_speakout2sendy_sendylist
 
 		$data = array(
 			'name'         => $this->name,
+			'sendyurl'     => $this->sendyurl,
 			'apikey'       => $this->apikey,
 			'list'         => $this->list,
 			'created_date' => $this->created_date
 		);
 
-			$format = array( '%s', '%s', '%s', '%s');
+			$format = array( '%s', '%s', '%s', '%s', '%s');
 			
 		$wpdb->insert( $db_sendylists, $data, $format );
 
@@ -94,6 +101,7 @@ class no_speakout2sendy_sendylist
 	 * Populates the properties of this object with posted form values
 	 * id
 	 * name
+	 * sendyurl
 	 * apikey
 	 * list
 	 * created_date (set to now)
@@ -107,6 +115,10 @@ class no_speakout2sendy_sendylist
 		// name
 		if ( isset( $_POST['name'] ) && $_POST['name'] != '' ) {
 			$this->name = $_POST['name'];
+		}
+		// sendyurl
+		if ( isset( $_POST['sendyurl'] ) && $_POST['sendyurl'] != '' ) {
+			$this->sendyurl = $_POST['sendyurl'];
 		}
 		// apikey
 		if ( isset( $_POST['apikey'] ) && $_POST['apikey'] != '' ) {
@@ -146,7 +158,7 @@ class no_speakout2sendy_sendylist
 		global $wpdb, $db_sendylists;
 
 		$sql = "
-			SELECT id, name, apikey, list, created_date
+			SELECT id, name, sendyurl, apikey, list, created_date
 			FROM $db_sendylists
 			WHERE id = $id
 		";
@@ -188,6 +200,7 @@ class no_speakout2sendy_sendylist
 	 * Updates an existing sendylist record in the database
 	 * id
 	 * name
+	 * sendyurl
 	 * apikey
 	 * list
 	 * 
@@ -198,9 +211,10 @@ class no_speakout2sendy_sendylist
 		global $wpdb, $db_sendylists;
 
 		$data = array(
-			'name'   => $this->name,
-			'apikey' => $this->apikey,
-			'list'   => $this->list
+			'name'     => $this->name,
+			'sendyurl' => $this->sendyurl,
+			'apikey'   => $this->apikey,
+			'list'     => $this->list
 		);
 		$where = array( 'id' => $id );
 
@@ -220,6 +234,7 @@ class no_speakout2sendy_sendylist
 	{
 		$this->id           = $sendylist->id;
 		$this->name         = $sendylist->name;
+		$this->sendyurl     = $sendylist->sendyurl;
 		$this->apikey       = $sendylist->apikey;
 		$this->list         = $sendylist->list;
 		$this->created_date = $syncjob->created_date;
